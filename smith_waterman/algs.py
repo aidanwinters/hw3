@@ -1,5 +1,4 @@
 import numpy as np
-import matplotlib.pyplot as plt
 from sklearn import metrics
 import random
 from .io import read_score_matrix, get_pos_pairs, get_neg_pairs
@@ -57,20 +56,6 @@ def tp_fp(pos_vals, neg_vals):
 def auc(tpr, fpr):
     return metrics.auc(fpr, tpr)
 
-#add a line to the current ROC plot
-def plot_roc_line(tpr, fpr, lbl):
-
-    plt.plot(fpr, tpr, '-', label=lbl)
-    plt.xlabel('FPR')
-    plt.ylabel('TPR')
-    plt.xlim(0,1)
-    plt.ylim(0,1)
-
-#plot the final roc plot (assuming all lines have already been plotted)
-def plot_roc_final():
-    plt.plot([0,1], [0,1], '--', c='red')
-    plt.legend()
-    plt.show()
 
 #mutate the matrix based on rules in the params
 #mutate_num is a fixed number of elements to randomly select for mutation

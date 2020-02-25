@@ -1,7 +1,7 @@
 import sys
 
-from .algs import sw, plot_roc_line, plot_roc_final, auc, tp_fp, optimize_score_matr
-from .io import read_score_matrix, read_fa, get_pos_pairs, get_neg_pairs
+from .algs import sw, auc, tp_fp, optimize_score_matr
+from .io import read_score_matrix, read_fa, get_pos_pairs, get_neg_pairs, plot_roc_line, plot_roc_final
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
@@ -71,5 +71,5 @@ def test_normalize_matr():
 # optimize_score_matr('./MATIO', orig_auc=0.7)
 
 # test_score_matrices()
-# test_normalize_matr()
+test_normalize_matr()
 # grid_search(range(1,21), range(1,6), file_out='gridsearch_BLOSUM50_1to20_1to5.csv')
